@@ -11,14 +11,14 @@ The template handles common app functionalities, laying the groundwork for furth
 
 [Wix apps](https://dev.wix.com/docs/build-apps) enhance the functionality of Wix sites by adding new features such as custom pages, dashboard components, third-party integrations, or site analytics. Starting with an app template fast-tracks the development process, providing a working foundational app that developers can modify and build upon. This approach saves valuable time, allowing for a quick transition from concept to a fully functional app.
 
-Learn more about [Wix app templates](https://dev.wix.com/docs/build-apps/developer-tools/templates-and-examples/get-started-from-an-app-template) and explore our growing [template collection](https://dev.wix.com/apps-templates).
+Learn more about [Wix app templates](https://dev.wix.com/docs/build-apps/get-started/templates/get-started-from-an-app-template) and explore our growing [template collection](https://dev.wix.com/apps-templates).
 
 
 ## Template features
 
 This Wix app template incorporates the following features:
 
-+ **Self-hosting:** Develop and host an app on any platform, and integrate with Wix using the Wix Dev Center.
++ **Self-hosting:** Develop and host an app on any platform, and integrate with Wix using the App Dashboard.
 + **OAuth:** Secure authentication flow following Wix's guidelines.
 + **Wix Design System:** Utilize Wix's reusable React components for a cohesive user experience consistent with Wix's design standards.
 + **Wix Dashboard SDK:** Integrate custom dashboard components with the Wix site dashboard.
@@ -42,7 +42,7 @@ Before getting started, make sure you have the following set up:
 This template supports [quick deployment on Vercel or Netlify](https://dev.wix.com/apps-templates/template?id=0580022b-625e-4467-9f78-28cc3e618483) so you can get your app up and running in minutes. With quick deployment, you can:
 
 + Clone the app template repo and deploy a live app server instantly.
-+ Generate a pre-configured app in the [Wix Dev Center](https://dev.wix.com/docs/build-apps/developer-tools/developers-center/get-started-with-the-wix-developers-center). For configuration details, read about [what deployment gives you](#what-deployment-gives-you).
++ Generate a pre-configured app in the [App Dashboard](https://dev.wix.com/docs/build-apps/develop-your-app/app-dashboard-setup/about-the-app-dashboard). For configuration details, read about [what deployment gives you](#what-deployment-gives-you).
 
 For instructions, go to the [app template page](https://dev.wix.com/apps-templates/template?id=0580022b-625e-4467-9f78-28cc3e618483).
 
@@ -57,9 +57,9 @@ To deploy the template on any other platform, follow these steps:
 Follow your platform's instructions to clone the repo and deploy the app server, then find and copy the deployment domain. This is the base URL for your app's server.
 
 
-### Step 2 | Generate a pre-configured Wix Dev Center app
+### Step 2 | Generate a pre-configured App Dashboard app
 
-To generate an app in the [Wix Dev Center](https://dev.wix.com/docs/build-apps/developer-tools/developers-center/get-started-with-the-wix-developers-center) and pre-configure it automatically for the template:
+To generate an app in the [App Dashboard](https://dev.wix.com/docs/build-apps/develop-your-app/app-dashboard-setup/about-the-app-dashboard) and pre-configure it automatically for the template:
 
 1. On the template page, click **Use Template**.
 
@@ -71,7 +71,7 @@ To generate an app in the [Wix Dev Center](https://dev.wix.com/docs/build-apps/d
 
 1. Click **Create & Continue**.
 
-This creates an app for you in the Wix Dev Center with the required URLs and permissions pre-configured.
+This creates an app for you in the App Dashboard with the required URLs and permissions pre-configured.
 
 
 ### Step 3 | Configure environment variables
@@ -97,9 +97,9 @@ When deployment is finished, your app is ready to install.
 
 ### Step 4 | Test the app
 
-Follow these steps to create a [development site](https://dev.wix.com/docs/build-apps/developer-tools/cli/workflow/development-sites), install your app on the site, and try it out.
+Follow these steps to create a development site, install your app on the site, and try it out.
 
-1. In your app's page in the [Wix Dev Center](https://dev.wix.com/apps), click **Test Your App** in the top right, then click **Create Development Site**.
+1. In [your app's dashboard](https://dev.wix.com/apps), click **Test Your App** in the top right, then click **Create Development Site**.
 
 1. In the list of business solutions to install on the development site, click **Wix Stores**, then click **Create Site**.
 
@@ -116,13 +116,13 @@ Your app is now installed on your development site. To see the app's dashboard p
 
 ## What deployment gives you
 
-When you deploy this template, an app is automatically created for you in the [Wix Dev Center](https://dev.wix.com/apps/my-apps), pre-configured with settings required for the app to function properly within the Wix ecosystem. Find these pre-configured settings later in the app's dashboard as follows:
+When you deploy this template, an app is automatically created for you in the [App Dashboard](https://dev.wix.com/apps/my-apps), pre-configured with settings required for the app to function properly within the Wix ecosystem. Find these pre-configured settings later in the app's dashboard as follows:
 
-+ **OAuth page:** App URL and Redirect URL for the [app OAuth flow](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
++ **OAuth page:** App URL and Redirect URL for the [advanced OAuth flow](https://dev.wix.com/docs/build-apps/develop-your-app/access/authentication/use-advanced-oauth).
 
-+ **Webhooks page:** App Removed and App Installed [webhooks](https://dev.wix.com/docs/build-apps/build-your-app/authentication/authentication-overview#webhooks).
++ **Webhooks page:** App Removed and App Installed [webhooks](https://dev.wix.com/docs/build-apps/develop-your-app/api-integrations/events-and-webhooks/about-webhooks).
 
-+ **Extensions page:** Dashboard Page extension for the [dashboard page](https://dev.wix.com/docs/build-apps/developer-tools/extensions/dashboard-page#create-a-dashboard-page) and eCom Shipping Rates extension for [integrating with the Shipping Rates SPI](https://dev.wix.com/docs/rest/api-reference/wix-e-commerce/shipping-rates-integration-spi/introduction).
++ **Extensions page:** Dashboard Page extension for the [dashboard page](https://dev.wix.com/docs/build-apps/develop-your-app/extensions/dashboard-extensions/dashboard-pages/about-dashboard-page-extensions) and eCom Shipping Rates extension for [integrating with the Shipping Rates SPI](https://dev.wix.com/docs/rest/api-reference/wix-e-commerce/shipping-rates-integration-spi/introduction).
 
 + **Permissions page:** [Permission scopes](https://dev.wix.com/docs/build-apps/build-your-app/authentication/permissions) required for the APIs that the app calls.
 
@@ -148,24 +148,24 @@ While developing your app, you may also wish to deploy and test it locally. You 
 
 3. Create a file called `.env.local` in the repo's root folder. In that file, paste the required environment variables that you copied during quick deployment.
 
-    If you didn't copy these values during quick deployment, you can retrieve them in the [Wix Dev Center](https://dev.wix.com/apps), then paste them in the following format:
+    If you didn't copy these values during quick deployment, you can retrieve them in the [App Dashboard](https://dev.wix.com/apps), then paste them in the following format:
 
     ```env
-    # App ID and App Secret Key: Retrieve from the OAuth page in the app's dashboard in the Wix Dev Center.
+    # App ID and App Secret Key: Retrieve from the OAuth page in the app's dashboard in the App Dashboard.
     APP_ID=<APP_ID>
     APP_SECRET=<APP_SECRET KEY>
 
-    # App Public Key: Retrieve from the Webhooks page in the app's dashboard in the Wix Dev Center.
+    # App Public Key: Retrieve from the Webhooks page in the app's dashboard in the App Dashboard.
     WEBHOOK_PUBLIC_KEY="<APP_WEBHOOK_PUBLIC_KEY>"
     ```
 
     **Note:** Always keep your `.env.local` secure and never commit it to version control. This file contains sensitive keys that should not be exposed publicly.
 
-4. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
+1. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
 
-   + **OAuth page:** App URL and Redirect URL for the [app OAuth flow](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
+   + **OAuth page:** App URL and Redirect URL for the [advanced OAuth flow](https://dev.wix.com/docs/build-apps/develop-your-app/access/authentication/use-advanced-oauth).
 
-   + **Webhooks page:** App Removed and App Installed [webhooks](https://dev.wix.com/docs/build-apps/build-your-app/authentication/authentication-overview#webhooks).
+   + **Webhooks page:** App Removed and App Installed [webhooks](https://dev.wix.com/docs/build-apps/develop-your-app/api-integrations/events-and-webhooks/about-webhooks).
 
 5. To start the development server, enter:
 
@@ -178,7 +178,7 @@ While developing your app, you may also wish to deploy and test it locally. You 
 
 You can now install the app on a Wix site with server code running locally.
 
-> **Note:** Remember to revert to the deployment URLs in the Wix Dev Center when you are ready to switch your app to production server deployment. You'll need to reinstall the app for the change to take effect.
+> **Note:** Remember to revert to the deployment URLs in the App Dashboard when you are ready to switch your app to production server deployment. You'll need to reinstall the app for the change to take effect.
 
 
 ## Extend and customize the app
@@ -188,7 +188,7 @@ The template is designed for easy customization and extension. Here are some sug
 
 ### Dashboard page customization
 
-The dashboard page is pre-integrated with the [Wix Design System](https://www.wixdesignsystem.com/) and [Wix Dashboard SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard/introduction), providing a simple user interface that includes support for server-side rendering. It includes navigation to other relevant pages and an example of a shipping delivery form, and it utilizes the [Wix Data API](https://dev.wix.com/docs/sdk/api-reference/data/items/query-data-items) to query and present the last three orders in the dashboard. It utilizes both [client-side](./src/app/utils/wix-sdk.client-only.ts) and [server-side](./src/app/utils/wix-sdk.ts)(can be used from the client too, but would increase bundle size) SDK implementations.
+The dashboard page is pre-integrated with the [Wix Design System](https://www.wixdesignsystem.com/) and [Wix Dashboard SDK](https://dev.wix.com/docs/sdk/host-modules/dashboard/introduction), providing a simple user interface that includes support for server-side rendering. It includes navigation to other relevant pages and an example of a shipping delivery form, and it utilizes the [Wix Data API](https://dev.wix.com/docs/sdk/api-reference/data/items/query-data-items) to query and present the last three orders in the dashboard. It utilizes both [client-side](./src/app/utils/wix-sdk.client-only.ts) and [server-side](./src/app/utils/wix-sdk.ts)(can be used from the client too, but would increase bundle size) SDK implementations.
 
 Customize the dashboard page to fit your specific needs, whether it's updating the UI or adding new features.
 
@@ -223,7 +223,7 @@ This endpoint is crucial for customizing the logic used to calculate shipping ra
 
 ### Webhooks support
 
-The template implements support for two app lifecycle [webhooks](https://dev.wix.com/docs/build-apps/developer-tools/apis-and-webhooks/webhooks).
+The template implements support for two app lifecycle [webhooks](https://dev.wix.com/docs/build-apps/develop-your-app/api-integrations/events-and-webhooks/about-webhooks).
 
 **Development entry points:**
 + [`src/app/api/webhooks/v1/install/route.ts`](./src/app/api/webhooks/v1/install/route.ts) receives a payload when the app is installed.
@@ -262,6 +262,6 @@ To update the screenshots, trigger the workflow manually, and set the `shouldUpd
 
 For more information:
 
-+ Learn more about [Wix app templates](https://dev.wix.com/docs/build-apps/developer-tools/templates-and-examples/get-started-from-an-app-template).
++ Learn more about [Wix app templates](https://dev.wix.com/docs/build-apps/get-started/templates/get-started-from-an-app-template).
 + Check out our [full collection of app templates](https://dev.wix.com/apps-templates).
 + See our documentation for details about [building Wix apps](https://dev.wix.com/docs/build-apps).
