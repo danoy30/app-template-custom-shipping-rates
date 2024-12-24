@@ -166,7 +166,7 @@ While developing your app, you may also wish to deploy and test it locally. You 
 
     **Note:** Always keep your `.env.local` secure and never commit it to version control. This file contains sensitive keys that should not be exposed publicly.
 
-4. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
+4. For the URLs configured in the App Dashboard, replace the app's base URL with `https://localhost:3000/`:
 
    + **OAuth page:** App URL and Redirect URL for the [advanced OAuth flow](https://dev.wix.com/docs/build-apps/develop-your-app/access/authentication/use-advanced-oauth).
 
