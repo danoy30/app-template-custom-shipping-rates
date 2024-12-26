@@ -32,6 +32,9 @@ Before getting started, make sure you have the following set up:
 
 + [Node.js](https://nodejs.org/en/) (v18.16.0 or higher).
 + A [Wix developer account](https://users.wix.com/signin?loginDialogContext=signup&referralInfo=HEADER&postLogin=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&postSignUp=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&forceRender=true).
++ Docker (optional) to run it locally
++ Make (optional) to run application locally without calling docker commands manually
++ [Ngrok](https://ngrok.com/blog-post/free-static-domains-ngrok-users) ideally using a static URL
 
 
 ## Deploy to a free hosting service
@@ -136,13 +139,14 @@ While developing your app, you may also wish to deploy and test it locally. You 
     git clone <YOUR_REPO>
     ```
 
-1. Make sure you are in the repo's root folder, then install dependencies:
+2. Make sure you are in the repo's root folder, then install dependencies:
 
     ```shell
     npm install
     ```
+   Notice: If using the dockerised approach locally this step is run as part of executing `make up` on the shell
 
-1. Create a file called `.env.local` in the repo's root folder. In that file, paste the required environment variables that you copied during quick deployment.
+3. Create a file called `.env.local` in the repo's root folder. In that file, paste the required environment variables that you copied during quick deployment.
 
     If you didn't copy these values during quick deployment, you can retrieve them in the [Wix Dev Center](https://dev.wix.com/apps), then paste them in the following format:
 
@@ -157,17 +161,20 @@ While developing your app, you may also wish to deploy and test it locally. You 
 
     **Note:** Always keep your `.env.local` secure and never commit it to version control. This file contains sensitive keys that should not be exposed publicly.
 
-1. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
+4. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
 
    + **OAuth page:** App URL and Redirect URL for the [app OAuth flow](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
 
    + **Webhooks page:** App Removed and App Installed [webhooks](https://dev.wix.com/docs/build-apps/build-your-app/authentication/authentication-overview#webhooks).
 
-1. To start the development server, enter:
+5. To start the development server, enter:
 
     ```shell
     npm run dev
     ```
+   If you would like to run it with Docker execute the followinr: 
+   - `make up` will run npm install and run dev, requires a UID and also expected a ngrok domain for the next step
+   - `make ngrok_static`, will run Ngrok locally against a fixed url as set in the `WIX_NGROK_DOMAIN` environment variable
 
 You can now install the app on a Wix site with server code running locally.
 

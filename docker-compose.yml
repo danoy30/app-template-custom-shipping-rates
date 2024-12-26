@@ -1,0 +1,22 @@
+services:
+  node:
+    image: node:lts
+    volumes:
+      - websrc:/project
+    environment:
+      HOME: .
+      npm_config_cache: npm-cache
+    command: [ "npm", "run", "dev" ]
+    working_dir: /project
+    user: $UID
+    ports:
+      - "3000:3000"
+    env_file: ".env.local"
+
+volumes:
+  websrc:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: $PWD

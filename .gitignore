@@ -40,3 +40,7 @@ certificates
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# docker
+npm-cache
+.cache
