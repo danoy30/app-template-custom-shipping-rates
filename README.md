@@ -81,16 +81,17 @@ Once your app is created, a screen appears with a code snippet containing enviro
 + `WIX_APP_ID`: Your app's Wix App ID.
 + `WIX_APP_SECRET`: Your app's secret key.
 + `WIX_APP_JWT_KEY`: Your app's public key.
++ `URL`: this variable can be added and is optional if deploying locally. It is already used by Netlify and you can also use it locally if deploying with a custom domain like a Ngrok domain
 
 Save these environment variables as follows:
 
 1. Click **copy** to copy the code snippet to the clipboard.
 
-1. Create a file in your production root folder called `.env`, paste the code snippet into the file and save it.
+2. Create a file in your production root folder called `.env`, paste the code snippet into the file and save it.
 
     **Note:** Always keep your `.env` secure and never commit it to version control. This file contains sensitive keys that should not be exposed publicly.
 
-1. Redeploy the app.
+3. Redeploy the app.
 
 When deployment is finished, your app is ready to install.
 
@@ -144,7 +145,7 @@ While developing your app, you may also wish to deploy and test it locally. You 
     ```shell
     npm install
     ```
-   Notice: If using the dockerised approach locally this step is run as part of executing `make up` on the shell
+   **Note:** If using the dockerised approach locally this step is run as part of executing `make up` on the shell
 
 3. Create a file called `.env.local` in the repo's root folder. In that file, paste the required environment variables that you copied during quick deployment.
 
@@ -157,11 +158,15 @@ While developing your app, you may also wish to deploy and test it locally. You 
 
     # App Public Key: Retrieve from the Webhooks page in the app's dashboard in the App Dashboard.
     WEBHOOK_PUBLIC_KEY="<APP_WEBHOOK_PUBLIC_KEY>"
+    
+    # URL for the local domain when running the app on your machine, ideally withh Ngrok if you need a public domain
+    # make sure the protocol prefix is included
+    URL=https://mydomain.ngrok....
     ```
 
     **Note:** Always keep your `.env.local` secure and never commit it to version control. This file contains sensitive keys that should not be exposed publicly.
 
-1. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
+4. For the URLs configured in the Wix Dev Center, replace the app's base URL with `https://localhost:3000/`:
 
    + **OAuth page:** App URL and Redirect URL for the [advanced OAuth flow](https://dev.wix.com/docs/build-apps/develop-your-app/access/authentication/use-advanced-oauth).
 
@@ -174,7 +179,7 @@ While developing your app, you may also wish to deploy and test it locally. You 
     ```
    If you would like to run it with Docker execute the followinr: 
    - `make up` will run npm install and run dev, requires a UID and also expected a ngrok domain for the next step
-   - `make ngrok_static`, will run Ngrok locally against a fixed url as set in the `WIX_NGROK_DOMAIN` environment variable
+   - `make ngrok_static`, will run Ngrok locally against a fixed url as set in the `WIX_NGROK_DOMAIN` environment variable. Do not forget to add the [URL variable](#164) in .env.local
 
 You can now install the app on a Wix site with server code running locally.
 
