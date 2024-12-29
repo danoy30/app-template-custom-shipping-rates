@@ -46,4 +46,4 @@ ngrok_free:
 	ngrok http
 
 ngrok_static: check_uid_set
-	ngrok http --domain="$(WIX_NGROK_DOMAIN)" 3000
+	ngrok http --url="$(WIX_NGROK_DOMAIN)" 3000
